@@ -133,12 +133,110 @@ This agent is being built **free of charge** as part of the ClawPlex sponsor rel
 
 ---
 
+## Open Source & Free Stack
+
+Every layer of this agent stacks on free or open-source tooling. Here's the full breakdown:
+
+### 🤖 AI & Agent Runtime
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Agent framework** | OpenClaw | Already running on clawbox | $0 |
+| **LLM** | Ollama + qwen3.5 (local) | Fully local, no API cost | $0 |
+| **Image generation** | FLUX.1 via Ollama / MiniMax | Cookie promo images generated locally | $0 |
+| **TTS** | ElevenLabs (if voice output needed) | Paid only — skip unless requested | $0 |
+
+### 📅 Event & Calendar
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Event calendar** | Cal.com | Open-source, self-hosted or free hosted tier | $0 |
+| **Calendar sync** | Google Calendar API | Connect events to Jonesy's personal calendar | $0 |
+| **Scheduling** | ICS files / cron jobs | Auto-generate event reminders | $0 |
+
+### 📧 Email & Notifications
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Transactional email** | Resend | Free: 100 emails/day, 3k/month — enough for confirmations & reminders | $0 |
+| **Marketing email** | Resend / Mailgun | Free tier on Mailgun: 5k/mo | $0 |
+| **Email parsing** | Gmail API | Auto-forward client inquiries to agent | $0 |
+
+### 📱 Social Media (Scheduling & Posting)
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Scheduling dashboard** | Buffer | Free plan: 3 channels, 10 scheduled posts/channel/mo | $0 |
+| **Scheduling alt** | Publer | Free plan: 3 social profiles, 30 posts | $0 |
+| **Native Instagram** | Meta Business Suite | Free posting, insights, stories | $0 |
+| **Native Facebook** | Meta Business Suite | Free posting, page management | $0 |
+| **Google Business** | Google Business Profile | Free — post updates, respond to reviews | $0 |
+| **Review monitoring** | Google Alerts + API | Brand mention tracking | $0 |
+
+### 🍪 Image Generation (Cookie Photos)
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Primary** | FLUX via Ollama (local) | Already on clawbox — no API call needed | $0 |
+| **Backup** | MiniMax image gen | If local quality isn't enough | $0 (using existing subscription) |
+| **Stock imagery** | Pexels / Unsplash | Free photos for overlay work | $0 |
+
+### 💬 Communication (Client Inquiries)
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Text/SMS** | Twilio | $0.0069/text — only pay for actual messages | Pay-as-you-go |
+| **WhatsApp** | WhatsApp Business (meta) | Free app, API requires business verification | $0 |
+| **Contact form** | Webhook → OpenClaw | Any website form routes to agent | $0 |
+| **Voice** | ElevenLabs (if needed) | TTS for audio messages | Paid only |
+
+### 🗄️ Database
+| Layer | Tool | Why | Cost |
+|-------|------|-----|------|
+| **Primary** | SQLite | Local file, zero config, perfect for small biz | $0 |
+| **Cloud backup** | Supabase | Free tier: 500MB, enough for events + orders | $0 |
+| **Object storage** | Cloudflare R2 | Free 10GB/mo for cookie images | $0 |
+
+---
+
+## Social Platform Costs
+
+### Free Platforms (No paid needed)
+| Platform | What's free | Limitations |
+|----------|-------------|-------------|
+| **Instagram** | Post, Stories, Reels, insights, DMs | No scheduled posts without third-party (use Buffer) |
+| **Facebook** | Page posts, Messenger, events | Same as Instagram |
+| **Google Business** | Posts, reviews, business info | Only for local search visibility |
+| **TikTok** | Posting, basic analytics | No business API for scheduling — must post manually |
+| **Nextdoor** | Posts, neighborhood reach | No scheduling API |
+| **Yelp** | Business page, responding to reviews | No posting API — manual only |
+
+### Paid Platforms
+| Platform | Cost | Why you'd pay |
+|----------|------|---------------|
+| **Twitter/X API** | $200+/mo | Required for any bot posting or DMs — overkill for this |
+| **LinkedIn API** | ~$30/mo | Only worth it if B2B corporate catering is a focus |
+| **Later (pro)** | $18/mo | Unlimited scheduling, more channels, analytics |
+| **Publer Pro** | $12/mo | Unlimited posts, bulk scheduling |
+| **Buffer Pro** | $6/seat/mo | 3 seats, unlimited scheduling, analytics |
+
+### Recommendation for Jonesy's
+
+**Start free, upgrade only if it makes sense:**
+1. Begin with Meta Business Suite (Instagram + Facebook) via Buffer free tier
+2. Use Google Business for free review management + local SEO
+3. Run image gen locally via FLUX
+4. Resend for all order confirmations and reminders
+5. Twilio pay-as-you-go for SMS only when needed
+6. Upgrade Buffer to Pro ($6/mo) once Jonesy's sees value and wants to scale posting
+
+**Total optional cost to start:** $0 — just time investment from the agent setup.
+**Minimal upgrade path:** $6/mo Buffer Pro when ready to scale.
+
+---
+
 ## Next Steps
 
 - [ ] Review this doc with Tyler
-- [ ] Confirm open questions with Thurman
+- [ ] Confirm open questions with Thurman (voice, channel, flavors, images, approval workflow)
 - [ ] Create SOUL.md (Jonesy's brand voice)
 - [ ] Build agent prompts per role
+- [ ] Set up Resend account for transactional email
+- [ ] Configure Buffer free tier for social scheduling
 - [ ] Test in dev environment
 - [ ] Deploy to production
 - [ ] Document case study for ClawPlex
