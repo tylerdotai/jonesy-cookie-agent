@@ -1,6 +1,6 @@
 ---
 name: jonesy-cookie-events
-description: "Event and logistics coordination for Jonesy's Cookie Company. Use when an event is confirmed, a day-of reminder needs to go out, prep checklists are needed, or post-event follow-up is due for Jonesy's Cookie Company catering."
+description: "Event and logistics coordination for Jonesy's Cookie Company. Triggers when an event is confirmed and a client confirmation needs to go out, when the 48-hour prep checklist needs to be generated for Thurman, when a client day-of logistics brief needs to be sent 2 hours before an event, when post-event thank-you and review request messages are due, when event data intake forms need to be completed, or when special flags require escalation to Thurman (30+ dozen, first-time client, last-minute booking, multiple events same weekend, venue restrictions, undisclosed dietary concerns, or wedding/high-stakes corporate events). Use this skill at every stage of the event lifecycle from booking confirmation through post-event follow-up for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Event & Logistics Coordinator

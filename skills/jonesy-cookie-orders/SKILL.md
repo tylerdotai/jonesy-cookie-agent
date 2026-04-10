@@ -1,6 +1,6 @@
 ---
 name: jonesy-cookie-orders
-description: "Order and inquiry management for Jonesy's Cookie Company. Use when a new inquiry comes in, a quote needs to be sent, a lead needs follow-up, a deposit needs tracking, or a stale opportunity needs re-engagement for Jonesy's Cookie Company."
+description: "Order and inquiry management for Jonesy's Cookie Company. Triggers when a new inquiry comes in via text, email, or website form, when a quote needs to be sent for a wedding, corporate event, or birthday party, when a lead needs follow-up after no response, when a deposit needs to be tracked or a reminder sent, when a stale opportunity needs re-engagement, or when a lead qualification checklist needs to be run before sending a quote. Use this skill every time an inquiry is received, a quote is drafted, a deposit is logged, or a follow-up message is sent for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Order & Inquiry Manager

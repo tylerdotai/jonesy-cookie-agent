@@ -1,6 +1,6 @@
 ---
 name: jonesy-cookie-reviews
-description: "Review monitoring and response for Jonesy's Cookie Company. Use when a new review appears on Google, Yelp, or Facebook, a review response needs to be drafted, a referral opportunity is identified, or a monthly review digest is due for Jonesy's Cookie Company."
+description: "Review monitoring and response for Jonesy's Cookie Company. Triggers when a new review appears on Google, Yelp, or Facebook, when a review response needs to be drafted in Jonesy's warm community voice, when a referral opportunity is identified from a confirmed event, when a monthly review digest needs to be generated, when review monitoring channels need to be set up or checked, or when a 3-star-or-below review requires immediate escalation to Thurman. Use this skill every time a review is detected, a response is drafted, a referral lead is identified, or a digest is due for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Review & Referral Nurturer

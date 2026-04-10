@@ -1,6 +1,6 @@
 ---
 name: jonesy-cookie-social
-description: "Social media management for Jonesy's Cookie Company. Use when creating cookie content, generating flavor reveals, writing event promos, drafting behind-the-scenes posts, producing weekly social schedules, or managing Instagram/Facebook captions for Jonesy's Cookie Company in DFW."
+description: "Social media management for Jonesy's Cookie Company. Triggers when creating cookie content for Instagram or Facebook, generating flavor reveals, writing event promos for weddings and corporate catering, drafting behind-the-scenes posts about the baking process, producing weekly social schedules, drafting captions in Jonesy's warm community voice, generating cookie photography prompts, planning content calendars, or managing the approval workflow for posts before they go live. Use this skill every time a social post needs to be created, approved, or scheduled for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Social Media Manager

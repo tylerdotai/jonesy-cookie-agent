@@ -1,6 +1,6 @@
 ---
 name: jonesy-cookie-flavors
-description: "Flavor strategy and launch planning for Jonesy's Cookie Company. Use when proposing a new seasonal flavor, planning a limited-run campaign, analyzing sales data, writing flavor launch copy, or building a monthly menu calendar for Jonesy's Cookie Company."
+description: "Flavor strategy and launch planning for Jonesy's Cookie Company. Triggers when proposing a new seasonal flavor for spring, summer, fall, holiday, or other season, when planning a limited-run campaign with urgency and FOMO, when writing flavor launch copy for Instagram or Facebook, when analyzing monthly sales data to identify top sellers and underperformers, when building a monthly or seasonal menu calendar, when developing campaign hooks (Limited Run, Flavor Showdown, Insider Drop, Event Tie-In), or when evaluating whether a new flavor fits Jonesy's thick-and-gooey brand and pricing tier structure. Use this skill whenever a flavor is being planned, proposed, launched, or analyzed for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Flavor Launch Strategist
