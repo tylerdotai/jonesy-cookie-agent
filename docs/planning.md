@@ -140,10 +140,9 @@ Every layer of this agent stacks on free or open-source tooling. Here's the full
 ### 🤖 AI & Agent Runtime
 | Layer | Tool | Why | Cost |
 |-------|------|-----|------|
-| **Agent framework** | OpenClaw | Already running on clawbox | $0 |
-| **LLM** | Ollama + qwen3.5 (local) | Fully local, no API cost | $0 |
-| **Image generation** | FLUX.1 via Ollama / MiniMax | Cookie promo images generated locally | $0 |
-| **TTS** | ElevenLabs (if voice output needed) | Paid only — skip unless requested | $0 |
+| **Agent framework** | OpenClaw | Core agent runtime | $0 |
+| **LLM** | Provider API key (Thurman's choice) | Cloud LLM for responses | Cost depends on provider |
+| **Image generation** | MiniMax / provider of choice | Cookie promo images | Cost depends on provider |
 
 ### 📅 Event & Calendar
 | Layer | Tool | Why | Cost |
@@ -172,8 +171,8 @@ Every layer of this agent stacks on free or open-source tooling. Here's the full
 ### 🍪 Image Generation (Cookie Photos)
 | Layer | Tool | Why | Cost |
 |-------|------|-----|------|
-| **Primary** | FLUX via Ollama (local) | Already on clawbox — no API call needed | $0 |
-| **Backup** | MiniMax image gen | If local quality isn't enough | $0 (using existing subscription) |
+| **Primary** | MiniMax / provider API | Cookie promo images generated on demand | Provider pricing |
+| **Backup** | Provider alt (DALL-E, etc.) | Fallback image gen | Provider pricing |
 | **Stock imagery** | Pexels / Unsplash | Free photos for overlay work | $0 |
 
 ### 💬 Communication (Client Inquiries)
