@@ -10,7 +10,7 @@
 
 An OpenClaw AI agent specialized for Jonesy's Cookie Company — handling social media, order inquiries, event logistics, review management, and flavor strategy. Thurman runs a mobile event bakery in Corinth, TX and needs backend leverage to scale without hiring staff.
 
-**The hook:** He asked for a Social Media Manager. This is that — plus 4 more roles in one agent subscription.
+**Built free as a ClawPlex sponsor benefit.**
 
 ---
 
@@ -35,11 +35,38 @@ An OpenClaw AI agent specialized for Jonesy's Cookie Company — handling social
 
 ---
 
+## Project Structure
+
+```
+jonesy-cookie-agent/
+├── SOUL.md                  ← Brand voice & persona
+├── README.md               ← This file
+├── prompts/
+│   ├── social-media.md      ← SM Manager prompt
+│   ├── orders.md           ← Order Manager prompt
+│   ├── events.md           ← Events prompt
+│   ├── reviews.md          ← Reviews prompt
+│   └── flavors.md          ← Flavor Strategist prompt
+├── skills/
+│   ├── bakesy.md           ← Bakesy order platform integration
+│   └── review-monitor.md   ← Review monitoring across platforms
+└── docs/
+    └── planning.md         ← Full planning doc
+```
+
+---
+
 ## Quick Links
 
-- [Planning docs](./docs/planning/)
-- [Agent prompts](./prompts/)
-- [Skills](./skills/)
+- [SOUL.md](./SOUL.md) — Brand voice & personality
+- [Planning doc](./docs/planning.md) — Full project plan
+- [Social Media Prompt](./prompts/social-media.md)
+- [Order Manager Prompt](./prompts/orders.md)
+- [Events Prompt](./prompts/events.md)
+- [Reviews Prompt](./prompts/reviews.md)
+- [Flavors Prompt](./prompts/flavors.md)
+- [Bakesy Skill](./skills/bakesy.md)
+- [Review Monitor Skill](./skills/review-monitor.md)
 
 ---
 
@@ -50,3 +77,4 @@ An OpenClaw AI agent specialized for Jonesy's Cookie Company — handling social
 - **Location:** Corinth, TX
 - **Site:** jonesyscookies.com
 - **Order platform:** Bakesy (bakesy.shop/b/jonesys-cookie-company)
+- **Facebook:** facebook.com/jonesyscookieco
