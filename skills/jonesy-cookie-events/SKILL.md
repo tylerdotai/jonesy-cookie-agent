@@ -1,87 +1,66 @@
 ---
 name: jonesy-cookie-events
-description: "Event and logistics coordination for Jonesy's Cookie Company. Manages the event calendar, sends day-of logistics, tracks delivery details, and ensures every event runs from confirmation to post-event follow-up. Use when an event is confirmed, a reminder needs to go out, or day-of logistics need to be sent for Jonesy's Cookie Company events."
+description: "Event and logistics coordination for Jonesy's Cookie Company. Use when an event is confirmed, a day-of reminder needs to go out, prep checklists are needed, or post-event follow-up is due for Jonesy's Cookie Company catering."
 ---
 
 # Jonesy Cookie — Event & Logistics Coordinator
 
-## Context
+Manages the complete event lifecycle: confirmation → 48h prep → day-of logistics → post-event thank-you.
 
-- **Business:** Jonesy's Cookie Company, Corinth TX
-- **Owner:** Thurman Jones, (817) 205-1238
-- **Event types:** Weddings, corporate, birthday parties, Celebration Cookie Cakes, farmers markets, meetup catering
+## Event Data Required (On Booking)
 
-## Event Data Required
+Collect all of:
+- Date + time
+- Venue address + setup location within venue
+- On-site contact name + phone
+- Dozen count by flavor
+- Special instructions (allergies, setup requirements, parking, noise restrictions)
+- Deposit status
+- Delivery or pickup
 
-On confirmation, collect:
-- [ ] Date + time
-- [ ] Venue/address
-- [ ] On-site contact name + phone
-- [ ] Dozen count per flavor
-- [ ] Special instructions (allergies, setup needs, parking)
-- [ ] Deposit status
-- [ ] Delivery or pickup
+See `./reference/event-data-checklist.md` for the full intake form.
 
 ## Timeline Workflow
 
-### At Confirmation
-Send client a confirmation summary with event details, balance due date, and what to expect day-of.
+| When | Action |
+|------|--------|
+| At confirmation | Send confirmation + what to expect |
+| 48h before | Send Thurman prep checklist |
+| 2h before | Send client day-of logistics brief |
+| Post-event | Send client thank-you + review request |
 
-### 48h Before — Thurman Prep Checklist
+## 48h Prep Checklist
 
-```
-📋 EVENT PREP — [EVENT NAME]
-📅 [DATE] | ⏰ [TIME]
-📍 [VENUE/ADDRESS]
-
-🍪 DOZENS: [QTY] dozen [FLAVOR]
-🚗 DELIVERY/PICKUP: [DETAILS]
-👤 CLIENT CONTACT: [NAME] | [PHONE]
-📝 SPECIAL NOTES: [ALLERGIES/OTHER]
-
-CHECKLIST:
-□ Dozens baked
-□ Cookie cakes (if applicable)
-□ Boxes/bags packed
-□ Vehicle loaded
-□ Client confirmation sent
+```bash
+node ./scripts/event-prep.js "[event-name]" [date] "[venue]" [dozens] "[flavors]"
 ```
 
-### Day-Of — 2h Before (Client Logistics)
+Generates a ready-to-use prep checklist for Thurman with all items checked off.
 
-```
-Hey [NAME]! Just a heads up — we'll be there around [TIME] to set up.
+## Client Day-Of Brief
 
-Parking: [DETAILS]
-Where to set up: [LOCATION]
-My cell on-site: (817) 205-1238
-
-Can't wait to make your [EVENT] sweet! 🍪
+```bash
+node ./scripts/client-brief.js "[client-name]" [time] "[venue]" "[parking]"
 ```
 
-### Post-Event Thank-You
+Generates a short, friendly text to send to the client 2 hours before the event.
 
-```
-[NAME] — it was a blast being part of your [EVENT]! Hope those cookies hit the spot.
-
-If you ever need cookies again or know someone who does, send them our way. And if you're happy, a Google or Facebook review helps small businesses like ours more than you'd believe!
-
-🍪 Thanks again!
-— Thurman
-Jonesy's Cookie Company
-```
-
-## Special Flags
+## Day-Of Flags
 
 Alert Thurman immediately if:
 - 30+ dozen single event
 - First-time client
 - Multiple events same weekend
-- Last-minute inquiry (<48h)
-- Venue has restrictions
-- Undisclosed dietary concerns
+- Last-minute booking (<48h)
+- Venue restrictions (setup time, noise, parking)
+- Any undisclosed dietary concerns
 
-## References
+---
 
-- Full workflow: `/home/tyler/jonesy-cookie-agent/prompts/events.md`
-- Brand voice: `/home/tyler/jonesy-cookie-agent/SOUL.md`
+# Supporting Files
+
+- `./reference/event-data-checklist.md` — Full intake form for new bookings
+- `./reference/timeline-workflow.md` — Step-by-step timeline for every event
+- `./reference/special-flags.md` — When to escalate to Thurman
+- `./scripts/event-prep.js` — Generates prep checklist for Thurman
+- `./scripts/client-brief.js` — Generates day-of client logistics text

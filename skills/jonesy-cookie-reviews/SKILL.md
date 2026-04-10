@@ -1,9 +1,11 @@
 ---
 name: jonesy-cookie-reviews
-description: "Review monitoring and response for Jonesy's Cookie Company. Monitors Google, Yelp, and Facebook for new reviews, drafts warm responses in Jonesy's voice, flags issues immediately, and identifies referral opportunities from happy customers. Use when a new review appears, a response needs to be drafted, or a referral opportunity is identified for Jonesy's Cookie Company."
+description: "Review monitoring and response for Jonesy's Cookie Company. Use when a new review appears on Google, Yelp, or Facebook, a review response needs to be drafted, a referral opportunity is identified, or a monthly review digest is due for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Review & Referral Nurturer
+
+Monitors for new reviews across Google, Yelp, and Facebook. Drafts warm responses for Thurman's approval. Identifies referral opportunities from happy customers.
 
 ## Review Channels
 
@@ -15,71 +17,43 @@ description: "Review monitoring and response for Jonesy's Cookie Company. Monito
 
 ## Response Rules
 
-### 5-Stars
-Respond within 24h. Warm, personal, grateful.
+| Rating | Action |
+|--------|--------|
+| 5-Stars | Warm personal thank-you, within 24h |
+| 4-Stars | Thank + ask what almost kept it from 5 |
+| 3-Stars or below | Flag Thurman immediately, do NOT respond publicly |
 
-```
-[NAME] — you're going to make me blush. Seriously, this is why we do this.
+See `./reference/response-templates.md` for exact response text by rating.
 
-Hope to see you at the next event! If you ever need cookies or know someone who does, we're always here. 🍪
+## Monthly Review Digest
 
-— Thurman
-Jonesy's Cookie Company
-```
+Run on the 1st of each month:
 
-### 4-Stars
-Thank them, ask what made it great, invite back.
-
-```
-Hey [NAME] — really appreciate the kind words! Almost perfect is still pretty great.
-
-Anything you wish was different? We'd love to know. 🍪
-
-— Thurman
+```bash
+node ./scripts/review-digest.js [month] [year]
 ```
 
-### 3-Stars or Below
-**Flag Thurman immediately via text. Do not respond publicly until he approves.**
-
-Internal alert format:
-```
-⚠️ REVIEW ALERT — [PLATFORM]
-[NAME] left [X] stars.
-Text: "[EXCERPT]"
-
-Action: Waiting for Thurman's approval before responding.
-```
+Outputs:
+- New review count
+- Average rating
+- Platform breakdown
+- Response rate
+- Notable patterns
 
 ## Referral Identification
 
-After confirmed events, identify referral potential:
-- Happy customer, high headcount event?
-- Connected to community (wedding planner, corporate HR, church)?
-- Sent a lot of referrals already?
+After confirmed events, flag clients who seem referral-ready:
+- 5-star experience likely
+- Connected to community (wedding planner, HR, church group)
+- High headcount event
 
-If yes → flag to Thurman in weekly digest with suggested intro message.
+See `./reference/referral-nurturing.md` for the full process.
 
-## Monthly Digest Format
+---
 
-```
-📊 MONTHLY REVIEW DIGEST — [MONTH]
+# Supporting Files
 
-New reviews: [N]
-Average rating: [X.X]
-Platform: Google [N] | Yelp [N] | Facebook [N]
-
-Flags: [N]
-Responded: [Y/N]
-
-Patterns:
-- [WHAT PEOPLE MENTION MOST]
-```
-
-## Voice
-
-Read SOUL.md before every response. Should feel like Thurman reading it over his phone — not a CSR queue. Genuine > polished.
-
-## References
-
-- Full workflow: `/home/tyler/jonesy-cookie-agent/prompts/reviews.md`
-- Brand voice: `/home/tyler/jonesy-cookie-agent/SOUL.md`
+- `./reference/response-templates.md` — Response text by rating
+- `./reference/referral-nurturing.md` — How to spot and act on referrals
+- `./reference/review-channels.md` — Platform setup and monitoring
+- `./scripts/review-digest.js` — Monthly digest generator

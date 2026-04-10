@@ -1,16 +1,26 @@
 ---
 name: jonesy-cookie-flavors
-description: "Flavor strategy and launch planning for Jonesy's Cookie Company. Proposes seasonal flavors, analyzes menu performance, writes launch copy, and plans limited-run campaigns. Use when proposing a new flavor, planning a seasonal campaign, analyzing sales data, or writing flavor launch copy for Jonesy's Cookie Company."
+description: "Flavor strategy and launch planning for Jonesy's Cookie Company. Use when proposing a new seasonal flavor, planning a limited-run campaign, analyzing sales data, writing flavor launch copy, or building a monthly menu calendar for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Flavor Launch Strategist
 
-## Context
+Proposes seasonal flavors, writes launch copy, and plans campaigns that create urgency and buzz around Jonesy's menu.
 
-- **Business:** Jonesy's Cookie Company, Corinth TX
-- **Menu tiers:** Gourmet Classics (~$20-30/dozen) | Premium Tiers (~$30-45/dozen)
-- **Cookie style:** Thick, gooey, baked from scratch
-- **Note:** Exact current flavor list — ask Thurman to confirm before building seasonal proposals
+## Flavor Proposal Format
+
+```bash
+node ./scripts/flavor-proposal.js "[flavor-name]" "[description]" [tier] [launch-date]
+```
+
+Generates a complete flavor proposal with tagline, image prompt, social copy, and campaign hook.
+
+## Tier Structure
+
+| Tier | Price | Style |
+|------|-------|-------|
+| Gourmet Classics | ~$20-30/dozen | Timeless, simple, perfect execution |
+| Premium Tiers | ~$30-45/dozen | Loaded, decadent, specialty |
 
 ## Seasonal Calendar
 
@@ -20,45 +30,13 @@ description: "Flavor strategy and launch planning for Jonesy's Cookie Company. P
 | Easter | April | Egg-shaped, pastel packaging |
 | Summer | June/July | Berry, lemon, refreshing |
 | Back to School | August | Classroom-friendly, bulk |
-| Fall/Halloween | October | Pumpkin spice, spooky shapes |
-| Holiday/Christmas | Nov/Dec | Peppermint, gift boxes |
+| Fall/Halloween | October | Pumpkin spice, spooky |
+| Holiday | November/December | Peppermint, gift boxes |
 | Valentine's | February | Heart-shaped, boxed sets |
 | Super Bowl | January | Game-day trays |
-| Graduation | May/June | Celebratory, school colors |
+| Graduation | May/June | Celebratory |
 
-## Flavor Proposal Format
-
-```
-🍪 NEW FLAVOR PROPOSAL: [NAME]
-
-Description: [2-3 sentence description of taste/texture/inspiration]
-
-Price tier: [Gourmet Classic / Premium Tier]
-
-Tagline: [One punchy line for social]
-
-Image prompt: [MiniMax image gen prompt]
-
-Why it works: [Seasonality + trend fit]
-
-Proposed launch: [DATE]
-Campaign hook: [WHAT MAKES THIS URGENT/SCARCE]
-```
-
-## Launch Copy Template
-
-```
-🍪 [FLAVOR NAME] IS LIVE
-
-[Hook — what makes this cookie special in 1 sentence]
-
-[2-3 sentences describing flavor, who it's for, when to have it]
-
-📍 Available [DATE] through [END DATE] only
-📦 Order via DM or (817) 205-1238
-
-#[FlavorHashtag] #JonesysCookies #DFWCookies
-```
+See `./reference/seasonal-calendar.md` for the full seasonal strategy.
 
 ## Campaign Types
 
@@ -67,28 +45,29 @@ Campaign hook: [WHAT MAKES THIS URGENT/SCARCE]
 | Limited Run | "Only here through [DATE] — when they're gone, they're gone" |
 | Flavor Showdown | "First 20 to order get both flavors to compare" |
 | Insider Drop | "24h early access for Jonesy's circle" |
-| Event Tie-In | "Made for [WEDDING SEASON / GAME DAY] — order by [DATE]" |
+| Event Tie-In | "Made for [SEASON] — order by [DATE]" |
 
-## Monthly Analytics Check-In
+See `./reference/campaign-types.md` for setup per campaign type.
 
-```
-📊 FLAVOR PERFORMANCE — [MONTH]
-Top seller: [FLAVOR]
-Most requested: [FLAVOR]
-Underperformer: [FLAVOR] — recommend [ACTION]
-Gap found: [OPPORTUNITY]
+## Monthly Analytics
 
-New flavor candidates:
-1. [IDEA]
-2. [IDEA]
-3. [IDEA]
+```bash
+node ./scripts/flavor-analytics.js [month]
 ```
 
-## Voice
+Outputs:
+- Top seller
+- Most requested
+- Underperformer + recommendation
+- Gap analysis
+- 3 new flavor candidates
 
-Would Thurman text this to his buddies? If yes, it's right. If no, rewrite. Read SOUL.md before every piece of copy.
+---
 
-## References
+# Supporting Files
 
-- Full workflow: `/home/tyler/jonesy-cookie-agent/prompts/flavors.md`
-- Brand voice: `/home/tyler/jonesy-cookie-agent/SOUL.md`
+- `./reference/seasonal-calendar.md` — Full seasonal strategy and flavor ideas
+- `./reference/campaign-types.md` — Campaign setup for each type
+- `./reference/flavor-proposal-guide.md` — How to write a proposal from scratch
+- `./scripts/flavor-proposal.js` — Automated proposal generator
+- `./scripts/flavor-analytics.js` — Monthly analytics script

@@ -1,63 +1,29 @@
 ---
 name: jonesy-cookie-social
-description: "Social media management for Jonesy's Cookie Company. Generates 5-7 posts/week for Instagram and Facebook with images, captions, and scheduling drafts in Jonesy's warm community voice. Use when creating cookie content, flavor reveals, event promos, behind-the-scenes posts, or weekly social drafts for Jonesy's Cookie Company."
+description: "Social media management for Jonesy's Cookie Company. Use when creating cookie content, generating flavor reveals, writing event promos, drafting behind-the-scenes posts, producing weekly social schedules, or managing Instagram/Facebook captions for Jonesy's Cookie Company in DFW."
 ---
 
 # Jonesy Cookie — Social Media Manager
 
-## Context
+Generates 5-7 social posts per week for Jonesy's Cookie Company across Instagram and Facebook. Creates images, writes captions in Jonesy's warm community voice, and outputs scheduling drafts for Thurman's approval.
 
-- **Business:** Jonesy's Cookie Company, Corinth TX — mobile event bakery
-- **Owner:** Thurman Jones, (817) 205-1238
-- **Tagline:** "Crafting Dessert Experiences"
-- **Cookie style:** Thick, gooey, baked from scratch
-- **Two tiers:** Gourmet Classics (~$20-30/dozen) and Premium Tiers (~$30-45/dozen)
-- **Order platform:** Bakesy (bakesy.shop/b/jonesys-cookie-company)
-- **Site:** jonesyscookies.com
+## Core Workflow
 
-## Voice
-
-Read the brand SOUL before every post. Core traits:
-- Warm texana hospitality — a neighbor who bakes, not a brand
-- Genuine, not performatively friendly
-- Slightly self-deprecating humor
-- Community-first, celebratory
-
-**Would Thurman say this?** If no, rewrite.
+1. Identify the content type for the week (see `./reference/content-types.md`)
+2. Generate the cookie image using MiniMax
+3. Write caption following the voice rules (see `./reference/caption-guide.md`)
+4. Output scheduling draft in standard format (see `./scripts/scheduling-draft.js`)
+5. Present to Thurman for approval before posting
 
 ## Content Types
 
-| Type | When to use | Platform |
-|------|-------------|----------|
-| Flavor Reveal | New or returning flavor announcement | Instagram, Facebook |
-| Event Promo | Wedding, corporate, party booking | Facebook |
-| Behind-the-Scenes | Baking process, dough, oven shots | Instagram |
-| Review Spotlight | Strong customer review to highlight | Facebook |
-| Weekend Vibe | Brand building, no specific news | Instagram |
-
-## Post Frequency
-
-- Instagram: 3-4x/week
-- Facebook: 2-3x/week
-- Google Business: As needed (reviews, local updates)
-
-## Output Format
-
-For each post, generate:
-```
-📅 [DAY] — [CONTENT TYPE]
-📸 Image prompt: [MiniMax image gen prompt]
-📝 Caption:
-[caption text — hook first, CTA last]
-
-#JonesysCookies #DFWCookies #GourmetCookies
-```
-
-## Image Prompt Template
-
-```
-Professional food photography of [cookie flavor] cookies from Jonesy's Cookie Company. Thick, gooey, golden brown on [neutral background: marble/slate/wood]. Natural lighting. Top-down or 45-degree angle. Warm Texas bakery aesthetic. No text overlay.
-```
+| Type | Platform | Frequency |
+|------|----------|-----------|
+| Flavor Reveal | Instagram, Facebook | 1-2x/week |
+| Event Promo | Facebook | 1x/week |
+| Behind-the-Scenes | Instagram | 1x/week |
+| Review Spotlight | Facebook | As available |
+| Weekend Vibe | Instagram | 1x/week |
 
 ## Caption Rules
 
@@ -67,15 +33,46 @@ Professional food photography of [cookie flavor] cookies from Jonesy's Cookie Co
 4. 1-3 emoji max, always relevant
 5. Always tag location: Corinth TX / DFW
 
-## Workflow
+See `./reference/caption-guide.md` for full voice rules, examples, and hashtag strategy.
 
-1. Generate 5-7 posts/week using content types above
-2. Generate image for each post via MiniMax
-3. Write caption following rules
-4. Output scheduling draft in format above
-5. Present to Thurman for approval before posting
+## Image Generation
 
-## References
+Use MiniMax for cookie photography. See `./reference/image-prompts.md` for prompt templates by cookie type.
 
-- Full flavor menu: `/home/tyler/jonesy-cookie-agent/prompts/social-media.md`
-- Brand voice SOUL: `/home/tyler/jonesy-cookie-agent/SOUL.md`
+```bash
+# Image generation handled via image_generate tool
+# Output path: ./research/images/[cookie-type].png
+```
+
+## Output Format
+
+```bash
+node ./scripts/scheduling-draft.js [day] [content-type] "[caption]" [image-path]
+```
+
+Scheduling draft format:
+```
+📅 [DAY] — [CONTENT TYPE]
+📸 Image: [path or generation prompt]
+📝 Caption:
+[caption text]
+#[hashtags]
+```
+
+## Weekly Post Planning
+
+See `./reference/weekly-calendar.md` for a full 7-day calendar template with content type rotation.
+
+## Voice Reminder
+
+Read the brand SOUL before every post. Would Thurman say this? If no, rewrite.
+
+---
+
+# Supporting Files
+
+- `./reference/content-types.md` — All 5 content types with when/how to use
+- `./reference/caption-guide.md` — Voice rules, examples, hashtag strategy
+- `./reference/image-prompts.md` — Image generation prompts by cookie type
+- `./reference/weekly-calendar.md` — 7-day planning template
+- `./scripts/scheduling-draft.js` — Formats post output for approval

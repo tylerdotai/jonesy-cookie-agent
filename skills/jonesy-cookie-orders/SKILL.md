@@ -1,66 +1,64 @@
 ---
 name: jonesy-cookie-orders
-description: "Order and inquiry management for Jonesy's Cookie Company. Handles incoming client inquiries, qualifies leads, generates quotes, collects deposits, and converts browsers into confirmed bookings. Use when a new inquiry comes in, a quote needs to be sent, a deposit needs to be tracked, or a lead needs follow-up for Jonesy's Cookie Company."
+description: "Order and inquiry management for Jonesy's Cookie Company. Use when a new inquiry comes in, a quote needs to be sent, a lead needs follow-up, a deposit needs tracking, or a stale opportunity needs re-engagement for Jonesy's Cookie Company."
 ---
 
 # Jonesy Cookie — Order & Inquiry Manager
 
-## Context
+Handles incoming client inquiries, qualifies leads, generates quotes, collects deposits, and converts casual browsers into confirmed bookings.
 
-- **Business:** Jonesy's Cookie Company, Corinth TX
-- **Owner:** Thurman Jones, (817) 205-1238
-- **Order platform:** Bakesy (bakesy.shop/b/jonesys-cookie-company)
-- **Pricing:** Gourmet Classics ~$20-30/dozen | Premium Tiers ~$30-45/dozen
+## Inquiry Routing
 
-## Inquiry Types
-
-| Type | Priority | Response SLA |
-|------|----------|--------------|
+| Type | Priority | SLA |
+|------|----------|-----|
 | Event inquiry (wedding/corporate/birthday) | High | Within 2 hours |
 | Quote request | High | Within 2 hours |
 | Quick question | Medium | Same day |
 | Complaint | Immediate | Alert Thurman NOW |
 | Referral ask | Medium | Same day |
 
-## Lead Qualification
+## Lead Qualification Checklist
 
-Before sending a quote, gather:
-- [ ] Event type and date
-- [ ] Expected headcount
-- [ ] Location (Corinth TX / DFW delivery range)
-- [ ] Flavor preferences
-- [ ] Budget if disclosed
-- [ ] How they found Jonesy's
+Before sending a quote, gather all of:
+- Event type and date
+- Expected headcount
+- Location (Corinth TX / DFW delivery range)
+- Flavor preferences
+- Budget if disclosed
+- How they found Jonesy's
 
-## Quote Template
+See `./reference/lead-qualification.md` for the full process and question script.
 
+## Quote Generation
+
+See `./scripts/generate-quote.js` for automated quote generation.
+
+```bash
+node ./scripts/generate-quote.js "[client-name]" "[event-type]" [dozens] "[flavors]" [date]
 ```
-Hi [NAME]! Thanks for reaching out about your [EVENT TYPE] on [DATE].
 
-Here's what I'd recommend:
-🍪 [QTY] dozen [FLAVORS]
-🎂 Celebration Cookie Cake: [YES/NO]
+Quote output includes: itemized order, deposit amount, balance due date, and a ready-to-send message to the client.
 
-Total: $[ESTIMATE]
+## Deposit Tracking
 
-To confirm, I just need a [DEPOSIT] deposit via Bakesy. The rest is due before your event.
+See `./reference/deposit-tracking.md` for deposit policy and follow-up schedule.
 
-Let me know if you'd like to lock it in!
-— Thurman
-Jonesy's Cookie Company
-(817) 205-1238
-```
+- Deposit: 50% at booking, 50% one week before event
+- Track in `orders/` log after confirmation
 
 ## Auto-Response Rules
 
-| Scenario | Action |
-|----------|--------|
+| Scenario | Response |
+|----------|----------|
 | Inquiry during business hours | Respond within 2 hours |
-| After hours | "Thanks for reaching out! I'm away from the oven right now but will get back to you first thing tomorrow morning." |
-| Stale inquiry (48h no response) | One follow-up |
-| Deposit not received (5 days) | Send reminder |
+| After hours | "I'm away from the oven right now but will get back to you first thing tomorrow morning." |
+| Stale inquiry (48h no response) | One follow-up message |
+| Deposit not received (5 days) | Reminder |
+| Deposit not received (10 days) | Final reminder — offer to release the date |
 
-## Escalation
+See `./reference/auto-responses.md` for full response templates.
+
+## Escalation Rules
 
 Alert Thurman immediately if:
 - Complaint or negative feedback
@@ -69,23 +67,29 @@ Alert Thurman immediately if:
 - Someone mentioning competitors or "comparing quotes"
 - Press/media inquiry
 
-## Output Format for New Inquiry
+## Output Format
 
+For every new inquiry, output:
 ```
 📋 NEW INQUIRY
-From: [NAME] | [METHOD]
+From: [NAME] | [METHOD — text/email/DM]
 Event: [TYPE] on [DATE]
 Headcount: [NUM]
 Location: [CITY]
 Flavors: [LIST]
+Source: [HOW FOUND]
 
-Qualification: [QUALIFIED / NEEDS MORE INFO]
+Qualification status: [QUALIFIED / NEEDS MORE INFO]
 
 Draft response:
 [Response text]
 ```
 
-## References
+---
 
-- Full workflow: `/home/tyler/jonesy-cookie-agent/prompts/orders.md`
-- Brand voice: `/home/tyler/jonesy-cookie-agent/SOUL.md`
+# Supporting Files
+
+- `./reference/lead-qualification.md` — Questions to ask, what to gather
+- `./reference/auto-responses.md` — Response templates by scenario
+- `./reference/deposit-tracking.md` — Deposit policy, payment info
+- `./scripts/generate-quote.js` — Generates formatted quotes
