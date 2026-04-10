@@ -116,15 +116,20 @@ jonesy-cookie-agent/
 
 ---
 
-## Pricing to Propose
+## Pricing — Sponsor Benefit (No charge)
 
+This agent is being built **free of charge** as part of the ClawPlex sponsor relationship with Jonesy's Cookie Company. It's a proof-of-concept — showing what OpenClaw can do for a real local business.
+
+| Plan | Roles | Price |
+|------|-------|-------|
+| **Jonesy's Stack** | All 5 roles | $0 — sponsor benefit |
+
+**Future paid tiers** (if Thurman wants to expand later):
 | Plan | Roles | Suggested price |
 |------|-------|----------------|
 | **Starter** | Social Media Manager | $299/mo |
 | **Growth** | Social + Order Manager | $499/mo |
 | **Full Stack** | All 5 roles | $799/mo |
-
-First 30 days free as part of ClawPlex sponsor deal.
 
 ---
 
