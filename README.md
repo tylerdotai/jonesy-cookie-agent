@@ -1,6 +1,6 @@
 # 🍪 Jonesy's Cookie Company — OpenClaw Agent
 
-**Status:** Planning stage — ready for Thurman's review
+**Status:** Skills complete, ready for deployment
 **Owner:** Jonesy's Cookie Company (Thurman Jones)
 **Repo:** [github.com/tylerdotai/jonesy-cookie-agent](https://github.com/tylerdotai/jonesy-cookie-agent)
 
@@ -11,15 +11,6 @@
 An AI agent specialized for Jonesy's Cookie Company — handling social media, order inquiries, event logistics, review management, and flavor strategy. Thurman runs a mobile event bakery in Corinth, TX and needs backend leverage to scale without hiring staff.
 
 **Built free as a ClawPlex sponsor benefit.**
-
----
-
-## Why a public repo?
-
-- Transparent case study for the ClawPlex community
-- Real-world proof that OpenClaw agents work for local businesses
-- Others can fork and adapt for their own cookie/bakery business
-- Thurman gets a professional setup he couldn't build himself
 
 ---
 
@@ -43,51 +34,46 @@ It explains what we built, what it means for your business, and what you need to
 
 ---
 
-## Competitive Landscape
-
-The `research/competitors/` folder has full analysis of 5 competitors. Key takeaways:
-
-| Competitor | What to Know |
-|-----------|---------------|
-| **Cookie Society** | Your main local competitor. Press (Oprah), DFW brand. Gap: no community presence, no AI tools |
-| **Crumbl** | Weekly flavor rotations, big social. Doesn't do events or custom orders. Own "made for YOUR event" |
-| **Tiff's Treats** | DFW-born, delivery-first. Gap: inconsistent quality, no social voice, no event focus |
-| **Great American** | Mall-based, Cookie Cake is their thing. Declining channel. Fill the Celebration Cookie Cake gap |
-| **Insomnia** | Late-night chain, strong unit economics. Different category — low direct threat |
-
-**Your positioning:** The community-connected local baker who shows up, knows your event, and bakes fresh for you. No chain can replicate that.
-
----
-
 ## Project Structure
 
 ```
 jonesy-cookie-agent/
 ├── FOR_THURMAN.md        ← Start here — plain language intro
-├── SOUL.md              ← Your brand voice & personality
+├── SOUL.md              ← Brand voice & personality
 ├── README.md            ← You are here
-├── prompts/
+├── prompts/             ← Full detailed prompts per role
 │   ├── social-media.md
 │   ├── orders.md
 │   ├── events.md
 │   ├── reviews.md
 │   └── flavors.md
-├── skills/             ← OpenClaw agent skills
+├── skills/             ← OpenClaw agent skills (installed)
 │   ├── jonesy-cookie-social/
 │   ├── jonesy-cookie-orders/
 │   ├── jonesy-cookie-events/
 │   ├── jonesy-cookie-reviews/
 │   └── jonesy-cookie-flavors/
-├── research/competitors/
-│   ├── summary.md
-│   ├── cookie-society.md
-│   ├── crumbl-cookies.md
-│   ├── tiffs-treats.md
-│   ├── great-american-cookies.md
-│   └── insomnia-cookies.md
+├── research/
+│   ├── competitors/   ← 5-competitor analysis
+│   ├── first-week-posts.md ← 7 pre-generated posts ready now
+│   └── images/         ← 4 AI-generated cookie images
 └── docs/
-    └── planning.md
+    └── planning.md     ← Full project plan
 ```
+
+---
+
+## Competitive Landscape
+
+| Competitor | Type | Threat |
+|-----------|------|--------|
+| **Cookie Society** | Local DFW chain | 🔴 Highest |
+| **Crumbl Cookies** | National franchise | 🟡 Medium |
+| **Tiff's Treats** | Regional (DFW-born) | 🟡 Medium |
+| **Great American** | National franchise | 🟢 Low |
+| **Insomnia Cookies** | National chain | 🟢 Low |
+
+Full analysis in `./research/competitors/summary.md`
 
 ---
 
@@ -97,6 +83,12 @@ jonesy-cookie-agent/
 - [Brand Voice — SOUL.md](./SOUL.md)
 - [Full Plan — docs/planning.md](./docs/planning.md)
 - [Competitive Analysis](./research/competitors/summary.md)
+- [First Week Posts](./research/first-week-posts.md)
+- [Social Media Skill](./skills/jonesy-cookie-social/SKILL.md)
+- [Order Manager Skill](./skills/jonesy-cookie-orders/SKILL.md)
+- [Events Skill](./skills/jonesy-cookie-events/SKILL.md)
+- [Reviews Skill](./skills/jonesy-cookie-reviews/SKILL.md)
+- [Flavors Skill](./skills/jonesy-cookie-flavors/SKILL.md)
 
 ---
 

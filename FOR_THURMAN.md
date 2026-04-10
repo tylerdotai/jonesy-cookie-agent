@@ -31,42 +31,53 @@ You just approve. The grinding is done.
 
 ---
 
-## What You Need to Get Started
-
-Nothing yet — this is a planning repo. To move to production:
-
-1. **AI API Key** — We recommend [MiniMax](https://minimaxi.com) (what powers this agent). ~$5-10/mo for light use. We'll set this up together.
-2. **Email account** — For order confirmations and client reminders. Resend is free for 100/day.
-3. **Social accounts** — Agent needs access to Facebook page (we can walk you through this)
-
-That's it. All free or cheap tools. No big commitment until you're seeing value.
-
----
-
 ## What's in the Repo
 
 ```
 jonesy-cookie-agent/
 ├── SOUL.md              ← Your brand voice — how the agent talks
 ├── prompts/             ← 5 agent role prompts (the brains)
-├── skills/             ← Installed skills ready to activate
+├── skills/             ← 5 OpenClaw agent skills (the installed tools)
+│   ├── jonesy-cookie-social/
+│   ├── jonesy-cookie-orders/
+│   ├── jonesy-cookie-events/
+│   ├── jonesy-cookie-reviews/
+│   └── jonesy-cookie-flavors/
 ├── research/
-│   └── competitors/     ← Full competitive analysis
-│       ├── Cookie Society (DFW local — your biggest competitor)
-│       ├── Crumbl (national — what to learn from)
-│       ├── Tiff's Treats (regional — their gaps are your wins)
-│       └── more
+│   ├── competitors/     ← Full competitive analysis
+│   │   ├── Cookie Society (DFW local — your biggest competitor)
+│   │   ├── Crumbl (national — what to learn from)
+│   │   ├── Tiff's Treats (regional — their gaps are your wins)
+│   │   └── more
+│   ├── first-week-posts.md ← 7 posts ready to post right now
+│   └── images/            ← 4 cookie photos ready to use
 └── docs/
-    └── planning.md      ← Full technical plan
+    └── planning.md        ← Full technical plan
 ```
 
 ---
 
-## First 3 Steps (When You're Ready)
+## First Week Ready to Go Right Now
 
-1. **Review the competitor research** — understand what Cookie Society does well, what they don't, and how we position against them
-2. **Approve the flavor calendar** — pick 2-3 seasonal flavors you want to launch first this spring/summer
-3. **Get your MiniMax API key** — we'll set up a free account and connect it
+You don't need to set anything up to start. Inside `research/`:
+- **first-week-posts.md** — 7 pre-written posts with captions, image prompts, and hashtags. Copy, paste, post.
+- **images/** — 4 cookie photos AI-generated. Post them today.
+
+---
+
+## What You Need to Get Started (When You're Ready)
+
+Nothing yet. To go live with the AI agent:
+
+1. **AI API Key** — We recommend [MiniMax](https://minimaxi.com). ~$5-10/mo for light use. We'll set this up together.
+2. **Email account** — For order confirmations and reminders. Resend is free for 100/day.
+3. **Social accounts** — Agent connects to your Facebook page. We'll walk you through connecting it.
+
+---
+
+## Competitor Research — Read This
+
+The `research/competitors/` folder has full write-ups on 5 cookie businesses. Key takeaway: **Cookie Society** is your main local competitor. They do great in DFW but have no community presence and no automation. That's where you win.
 
 ---
 
