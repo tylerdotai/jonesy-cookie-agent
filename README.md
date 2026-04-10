@@ -42,16 +42,27 @@ jonesy-cookie-agent/
 ├── SOUL.md                  ← Brand voice & persona
 ├── README.md               ← This file
 ├── prompts/
-│   ├── social-media.md      ← SM Manager prompt
-│   ├── orders.md           ← Order Manager prompt
-│   ├── events.md           ← Events prompt
-│   ├── reviews.md          ← Reviews prompt
-│   └── flavors.md          ← Flavor Strategist prompt
-├── skills/
-│   ├── bakesy.md           ← Bakesy order platform integration
-│   └── review-monitor.md   ← Review monitoring across platforms
+│   ├── social-media.md      ← Full SM Manager prompt
+│   ├── orders.md           ← Full Order Manager prompt
+│   ├── events.md           ← Full Events prompt
+│   ├── reviews.md          ← Full Reviews prompt
+│   └── flavors.md          ← Full Flavor Strategist prompt
+├── skills/                 ← OpenClaw agent skills
+│   ├── jonesy-cookie-social/
+│   ├── jonesy-cookie-orders/
+│   ├── jonesy-cookie-events/
+│   ├── jonesy-cookie-reviews/
+│   └── jonesy-cookie-flavors/
+├── research/
+│   └── competitors/        ← Competitive intelligence
+│       ├── summary.md
+│       ├── insomnia-cookies.md
+│       ├── tiffs-treats.md
+│       ├── great-american-cookies.md
+│       ├── crumbl-cookies.md
+│       └── cookie-society.md
 └── docs/
-    └── planning.md         ← Full planning doc
+    └── planning.md         ← Full project plan
 ```
 
 ---
@@ -65,8 +76,24 @@ jonesy-cookie-agent/
 - [Events Prompt](./prompts/events.md)
 - [Reviews Prompt](./prompts/reviews.md)
 - [Flavors Prompt](./prompts/flavors.md)
-- [Bakesy Skill](./skills/bakesy.md)
-- [Review Monitor Skill](./skills/review-monitor.md)
+- [Competitor Analysis](./research/competitors/summary.md)
+- [Insomnia Cookies](./research/competitors/insomnia-cookies.md)
+- [Tiff's Treats](./research/competitors/tiffs-treats.md)
+- [Great American Cookies](./research/competitors/great-american-cookies.md)
+- [Crumbl Cookies](./research/competitors/crumbl-cookies.md)
+- [Cookie Society](./research/competitors/cookie-society.md)
+
+---
+
+## Competitive Landscape
+
+| Competitor | Type | Threat Level |
+|-----------|------|-------------|
+| **Cookie Society** | Local DFW chain | 🔴 Highest |
+| **Crumbl Cookies** | National franchise | 🟡 Medium |
+| **Tiff's Treats** | Regional (DFW-born) | 🟡 Medium |
+| **Great American** | National franchise | 🟢 Low |
+| **Insomnia Cookies** | National chain | 🟢 Low |
 
 ---
 
